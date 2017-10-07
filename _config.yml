@@ -232,7 +232,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/bird.jpeg
-avatar: /images/bird.jpeg
+avatar: /images/avatar.gif
 
 # Table Of Contents in the Sidebar
 toc:
