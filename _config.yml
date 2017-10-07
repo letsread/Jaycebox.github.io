@@ -700,3 +700,9 @@ images: assets/images
 version: 5.1.1
 
 theme: jekyll-theme-cayman
+
+#打赏
+reward_comment: 沉迷blog,日渐消瘦，扫一扫为博主投食。
+wechatpay: /assets/images/raward-image/wechat-reward-image
+alipay: /assets/images/reward-image/alipay-reward-image
+
