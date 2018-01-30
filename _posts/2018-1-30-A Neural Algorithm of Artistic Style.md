@@ -1,5 +1,5 @@
 ---
-title:艺术(图像风格转换) A Neural Algorithm of Artistic Style
+title: 艺术(图像风格转换) A Neural Algorithm of Artistic Style
 date: 2018-1-30 15:53:00
 categories: 
 - 论文翻译
