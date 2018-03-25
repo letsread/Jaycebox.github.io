@@ -79,7 +79,7 @@ $L_{content}(\vec{p},\vec{x},l)=\frac{1}{2}\sum_{ij}(F^{l}\_{ij}-P^{l}\_{ij})^2$
 
 其导函数为:
 
-$$\frac{\partial L_{contant}}{\partial F^{l}\_{ij}} = \begin{equation} \begin{cases}(F^l-P^l)& \text{F^l_{ij}>0} \\ 0& \text{F^l_{ij}<0}\end{cases} \end{equation}$$
+$$\frac{\partial L_{contant}}{\partial F^{l}\_{ij}} = \begin{equation} \begin{cases}(F^l-P^l)& {F^l_{ij}>0} \\ 0& {F^l_{ij}<0}\end{cases} \end{equation}$$
 
 从中可以使用标准误差反向传播来计算相对于图像 x 的梯度。 因此，我们可以改变最初的随机图像$\vec{x}$，直到它产生误差最小的应答层，作为 CNN 原始图像$\vec{p}$。图 1 中的五个内容重构来自原始 VGG 网络的层 1(a)，'conv2 1'(b)，'conv3 1'(c)，'conv4 1'(d)和'conv5 1'(e)。
 
@@ -93,7 +93,7 @@ $E_l = \frac{1}{4N^{l^2}M^{l^2}} \sum_{ij}(G^l_{ij}-A^l_{ij})^2$
 
 其导数为：
 
-$$\frac{\partial E_l}{\partial F^l_{ij}}= \begin{cases} \frac{1}{4N^{l^2}M^{l^2}}(F^{l^T}(G^l-A^l))\_{ji}& \text{F^l_{ij}>0} \\ 0& \text{F^l_{ij}<0} \end{cases} $$
+$$\frac{\partial E_l}{\partial F^l_{ij}}= \begin{cases} \frac{1}{4N^{l^2}M^{l^2}}(F^{l^T}(G^l-A^l))\_{ji}& {F^l_{ij}>0} \\ 0& {F^l_{ij}<0} \end{cases} $$
 
 则，网络的风格总损失就为:			
 
