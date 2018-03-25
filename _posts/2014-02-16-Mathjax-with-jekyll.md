@@ -101,3 +101,8 @@ $$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
 will be displayed as
 
 \\[ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} \\]
+
+测试一下latex
+$$L_{content}(\vec{p},\vec{x},l)=\frac{1}{2}\sum_{ij}(F^{l}{ij}-P^{l}{ij})^2$$
+
+$L_{content}(\vec{p},\vec{x},l)=\frac{1}{2}\sum_{ij}(F^{l}{ij}-P^{l}{ij})^2$
