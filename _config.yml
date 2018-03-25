@@ -536,8 +536,9 @@ calendar:
   maxResults: 250
 
 # Algolia Search
+# 开完下面一项Local search自动开，试了一下好像多了一个搜索栏，但点进去一种加载没有改变
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
   labels:
@@ -548,7 +549,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: true
+  enable: false
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
