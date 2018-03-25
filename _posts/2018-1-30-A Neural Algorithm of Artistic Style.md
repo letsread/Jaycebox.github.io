@@ -71,19 +71,19 @@ tags:
 
 对于一个网络可以分为若干层，每一层又有若干非线性的滤波器组，其复杂度随着所处的层数增加而增加。所以，对于一个输入图$\vec{x}$，每一层中滤波器都会对他产生一个响应作为这个图像的编码。一个具有$N^l$个滤波器的层可以产生$N^l$个特征图像，其尺寸为$M^l$($M^l$为该图像的长乘宽)。因此，层 l 的响应可以存在一个矩阵中:
 
-$F^l \in R^{N1*M1}$
+$F^l \in R^{N1\*M1}$
 
 其中，$F^l_{ij}$ 是第 l 层中第 i 个滤波器对第 j 个位置的响应。为了可视化不同层对图像的编码信息，我们采用对图像白噪声梯度下降的方法，以找到与原始图像的特征响应相匹配的另一图像。所以，我们设$\vec{p}$为原始图像，$\vec{x}$为生成图像$P^l$和$F^l$分别表示网络中 l 层的特征，我们定义两个特征之间的平方误差损失为:
 
-$L_{content}(\vec{p},\vec{x},l)=\frac{1}{2}\sum_{ij}(F^{l}_{ij}-P^{l}_{ij})^2$
+$L_{content}(\vec{p},\vec{x},l)=\frac{1}{2}\sum_{ij}(F^{l}\_{ij}-P^{l}\_{ij})^2$
 
 其导函数为:
 
-$\frac{\partial L_{contant}}{\partial F^{l}_{ij}} = \begin{equation} \begin{cases}(F^l-P^l)& {F^l_{ij}>0}\\ 0& {F^l_{ij}<0}\end{cases} \end{equation}$
+$\frac{\partial L_{contant}}{\partial F^{l}\_{ij}} = \begin{equation} \begin{cases}(F^l-P^l)& {F^l_{ij}>0}\\ 0& {F^l_{ij}<0}\end{cases} \end{equation}$
 
 从中可以使用标准误差反向传播来计算相对于图像 x 的梯度。 因此，我们可以改变最初的随机图像$\vec{x}$，直到它产生误差最小的应答层，作为 CNN 原始图像$\vec{p}$。图 1 中的五个内容重构来自原始 VGG 网络的层 1(a)，'conv2 1'(b)，'conv3 1'(c)，'conv4 1'(d)和'conv5 1'(e)。
 
-在网络每一层的 CNN 响应之上，我们建立了一个风格表示，计算不同的滤波器响应之间的相关性，其期望值是在输入图像的空间范围内的。 这些特征相关性由格雷姆矩阵$G^l∈R^{N^l∗N^l}$给出，其中$G^l_{ij}$为矢量化特征映射之间的内积:
+在网络每一层的 CNN 响应之上，我们建立了一个风格表示，计算不同的滤波器响应之间的相关性，其期望值是在输入图像的空间范围内的。 这些特征相关性由格雷姆矩阵$G^l∈R^{N^l\*N^l}$给出，其中$G^l_{ij}$为矢量化特征映射之间的内积:
 
 $G^l_{ij}=\sum_k F^l_{ik} F^l_{jk}$
 
@@ -93,7 +93,7 @@ $E_l = \frac{1}{4N^{l^2}M^{l^2}} \sum_{ij}(G^l_{ij}-A^l_{ij})^2$
 
 其导数为：
 
-$\frac{\partial E_l}{\partial F^l_{ij}}= \begin{cases} \frac{1}{4N^{l^2}M^{l^2}}(F^{l^T}(G^l-A^l))_{ji}& {F^l_{ij}>0}\\ 0& {F^l_{ij}<0} \end{cases} $
+$\frac{\partial E_l}{\partial F^l_{ij}}= \begin{cases} \frac{1}{4N^{l^2}M^{l^2}}(F^{l^T}(G^l-A^l))\_{ji}& {F^l_{ij}>0}\\ 0& {F^l_{ij}<0} \end{cases} $
 
 则，网络的风格总损失就为:			
 
